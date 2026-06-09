@@ -1,0 +1,1397 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sorrir &amp; Vida Odontologia | Clinica Odontologica Premium</title>
+    <meta
+      name="description"
+      content="Clinica odontologica moderna para implantes, ortodontia, estetica dental, clareamento e cuidados preventivos com atendimento humanizado."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f766e" />
+    <link rel="canonical" href="https://vitrine-clinica-odontologica.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sorrir &amp; Vida Odontologia" />
+    <meta
+      property="og:description"
+      content="Odontologia moderna, segura e humanizada para transformar seu sorriso com planejamento digital."
+    />
+    <meta property="og:url" content="https://vitrine-clinica-odontologica.vercel.app/" />
+    <meta property="og:site_name" content="Sorrir &amp; Vida Odontologia" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sorrir &amp; Vida Odontologia" />
+    <meta
+      name="twitter:description"
+      content="Clinica odontologica premium com diagnostico digital, especialistas integrados e experiencia acolhedora."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "name": "Sorrir & Vida Odontologia",
+        "description": "Clinica odontologica moderna para tratamentos preventivos, esteticos, ortodonticos e reabilitadores.",
+        "url": "https://vitrine-clinica-odontologica.vercel.app/",
+        "telephone": "+55-11-4002-2026",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Saude Integral, 1280",
+          "addressLocality": "Sao Paulo",
+          "addressRegion": "SP",
+          "postalCode": "01310-100",
+          "addressCountry": "BR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "13:00"
+          }
+        ],
+        "medicalSpecialty": ["Dentistry", "Orthodontics", "OralSurgery"]
+      }
+    </script>
+
+    <style>
+      :root {
+        --ink: #10201f;
+        --muted: #647371;
+        --soft: #eef7f5;
+        --surface: #ffffff;
+        --line: #dce8e5;
+        --brand: #0f766e;
+        --brand-dark: #0a4f49;
+        --accent: #c89242;
+        --accent-soft: #fff4df;
+        --danger: #b42318;
+        --shadow: 0 24px 70px rgba(15, 45, 42, 0.12);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #fbfefd;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      body.is-loading {
+        overflow: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      .loader {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: grid;
+        place-items: center;
+        background: var(--surface);
+        transition:
+          opacity 0.35s ease,
+          visibility 0.35s ease;
+      }
+
+      .loader[aria-hidden="true"] {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .loader-mark {
+        width: 56px;
+        height: 56px;
+        border: 3px solid var(--line);
+        border-top-color: var(--brand);
+        border-radius: 50%;
+        animation: spin 0.9s linear infinite;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 110;
+        transform: translateY(-140%);
+        border-radius: var(--radius);
+        background: var(--ink);
+        color: #fff;
+        padding: 10px 14px;
+        transition: transform 0.2s ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .container {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(220, 232, 229, 0.75);
+        background: rgba(251, 254, 253, 0.9);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        display: flex;
+        min-height: 74px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .brand-icon {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 14px 30px rgba(15, 118, 110, 0.25);
+      }
+
+      .brand small {
+        display: block;
+        color: var(--muted);
+        font-size: 0.76rem;
+        font-weight: 600;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .nav-links a {
+        border-radius: 999px;
+        color: #30423f;
+        font-size: 0.93rem;
+        font-weight: 700;
+        padding: 9px 12px;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        background: var(--soft);
+        color: var(--brand-dark);
+        outline: none;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .menu-toggle span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        margin: 4px auto;
+        border-radius: 999px;
+        background: currentColor;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid transparent;
+        border-radius: var(--radius);
+        cursor: pointer;
+        font-weight: 800;
+        padding: 11px 18px;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          background 0.18s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 14px 34px rgba(15, 118, 110, 0.24);
+      }
+
+      .button-primary:hover,
+      .button-primary:focus-visible {
+        background: var(--brand-dark);
+      }
+
+      .button-secondary {
+        border-color: var(--line);
+        background: var(--surface);
+        color: var(--ink);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 78px 0 56px;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(251, 254, 253, 0.98), rgba(251, 254, 253, 0.82)),
+          radial-gradient(circle at 80% 20%, rgba(200, 146, 66, 0.16), transparent 34%),
+          radial-gradient(circle at 15% 15%, rgba(15, 118, 110, 0.16), transparent 34%);
+        content: "";
+      }
+
+      .hero-grid {
+        display: grid;
+        align-items: center;
+        gap: 54px;
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--brand-dark);
+        font-size: 0.84rem;
+        font-weight: 800;
+        padding: 7px 12px;
+      }
+
+      .eyebrow::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 780px;
+        margin-top: 18px;
+        font-size: clamp(2.7rem, 6vw, 5.35rem);
+      }
+
+      h2 {
+        font-size: clamp(2rem, 3.8vw, 3.6rem);
+      }
+
+      h3 {
+        font-size: 1.15rem;
+      }
+
+      .hero-copy {
+        max-width: 660px;
+        margin: 22px 0 0;
+        color: #4b5f5c;
+        font-size: 1.12rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .trust-row {
+        display: grid;
+        max-width: 680px;
+        margin-top: 38px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.76);
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .trust-item {
+        padding: 18px;
+      }
+
+      .trust-item + .trust-item {
+        border-left: 1px solid var(--line);
+      }
+
+      .trust-item strong {
+        display: block;
+        color: var(--brand-dark);
+        font-size: 1.45rem;
+        line-height: 1;
+      }
+
+      .trust-item span {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .clinic-scene {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .status-panel {
+        position: absolute;
+        right: -14px;
+        bottom: 26px;
+        width: min(260px, 68%);
+        border: 1px solid rgba(220, 232, 229, 0.9);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 18px 44px rgba(15, 45, 42, 0.16);
+        padding: 16px;
+      }
+
+      .status-panel strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .status-panel p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .section {
+        padding: 92px 0;
+      }
+
+      .section-muted {
+        background: var(--soft);
+      }
+
+      .section-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 28px;
+        margin-bottom: 34px;
+      }
+
+      .section-header p {
+        max-width: 520px;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        padding: 24px;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          border-color 0.18s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(15, 118, 110, 0.35);
+        box-shadow: 0 18px 48px rgba(15, 45, 42, 0.08);
+      }
+
+      .icon-box {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border-radius: var(--radius);
+        background: var(--soft);
+        color: var(--brand);
+      }
+
+      .card h3 {
+        margin-top: 20px;
+      }
+
+      .card p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      .process {
+        display: grid;
+        align-items: start;
+        gap: 26px;
+        grid-template-columns: 0.82fr 1fr;
+      }
+
+      .process-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .process-item {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 42px 1fr;
+      }
+
+      .process-number {
+        display: grid;
+        height: 42px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--brand);
+        color: #fff;
+        font-weight: 900;
+      }
+
+      .process-item p {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+
+      .experience-panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 26px;
+      }
+
+      .metrics {
+        display: grid;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .metric {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-radius: var(--radius);
+        background: var(--soft);
+        padding: 14px 16px;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .team-card {
+        overflow: hidden;
+        padding: 0;
+      }
+
+      .portrait {
+        display: grid;
+        min-height: 230px;
+        place-items: end center;
+        background:
+          linear-gradient(145deg, rgba(15, 118, 110, 0.14), rgba(200, 146, 66, 0.15)),
+          #f8fbfa;
+      }
+
+      .team-content {
+        padding: 22px;
+      }
+
+      .team-content span {
+        color: var(--brand);
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      blockquote {
+        margin: 0;
+      }
+
+      .quote {
+        color: #334845;
+        font-size: 1rem;
+      }
+
+      .client {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .avatar {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        color: #7a4e12;
+        font-weight: 900;
+      }
+
+      .appointment {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: 0.88fr 1.12fr;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 26px;
+      }
+
+      .contact-list a,
+      .contact-list div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #334845;
+        font-weight: 700;
+      }
+
+      .form {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 26px;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .field {
+        display: grid;
+        gap: 7px;
+      }
+
+      .field-full {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        color: #243835;
+        font-size: 0.88rem;
+        font-weight: 800;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #fff;
+        color: var(--ink);
+        padding: 12px 13px;
+        transition:
+          border-color 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+
+      textarea {
+        min-height: 112px;
+        resize: vertical;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--brand);
+        box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
+        outline: none;
+      }
+
+      .field-error {
+        min-height: 18px;
+        color: var(--danger);
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .form-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .privacy {
+        max-width: 370px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .form-status {
+        margin-top: 16px;
+        border-radius: var(--radius);
+        background: var(--soft);
+        color: var(--brand-dark);
+        font-weight: 800;
+        padding: 12px 14px;
+      }
+
+      .form-status:empty {
+        display: none;
+      }
+
+      .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        padding: 18px 20px;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 900;
+      }
+
+      details p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--line);
+        background: #0b1d1b;
+        color: #dbe7e4;
+        padding: 42px 0;
+      }
+
+      .footer-grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        color: #a9bbb7;
+        font-weight: 700;
+      }
+
+      .reveal {
+        transform: translateY(18px);
+        opacity: 0;
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s ease;
+      }
+
+      .reveal.is-visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .skeleton {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .skeleton::after {
+        position: absolute;
+        inset: 0;
+        transform: translateX(-100%);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.62), transparent);
+        animation: shimmer 1.4s ease-in-out 2;
+        content: "";
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes shimmer {
+        to {
+          transform: translateX(100%);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .nav-links {
+          position: fixed;
+          top: 74px;
+          right: 20px;
+          left: 20px;
+          display: none;
+          border: 1px solid var(--line);
+          border-radius: var(--radius);
+          background: var(--surface);
+          box-shadow: var(--shadow);
+          padding: 12px;
+        }
+
+        .nav-links.is-open {
+          display: grid;
+        }
+
+        .nav-links a {
+          border-radius: var(--radius);
+          padding: 12px;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .hero-grid,
+        .process,
+        .appointment {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 54px;
+        }
+
+        .services-grid,
+        .team-grid,
+        .testimonials-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .section-header {
+          display: grid;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .container {
+          width: min(100% - 28px, 1160px);
+        }
+
+        .nav-actions .button {
+          display: none;
+        }
+
+        .brand small {
+          display: none;
+        }
+
+        .hero-actions,
+        .form-footer,
+        .footer-grid {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .trust-row,
+        .services-grid,
+        .team-grid,
+        .testimonials-grid,
+        .form-grid,
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .trust-item + .trust-item {
+          border-top: 1px solid var(--line);
+          border-left: 0;
+        }
+
+        .section {
+          padding: 68px 0;
+        }
+
+        .status-panel {
+          position: static;
+          width: 100%;
+          margin-top: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="is-loading">
+    <div class="loader" aria-hidden="false">
+      <div class="loader-mark" aria-label="Carregando site da Sorrir & Vida Odontologia"></div>
+    </div>
+
+    <a class="skip-link" href="#conteudo">Ir para o conteudo principal</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navegacao principal">
+        <a class="brand" href="#inicio" aria-label="Sorrir e Vida Odontologia">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M7.2 3.8c1.35-.5 2.96-.08 4.8.82 1.84-.9 3.45-1.32 4.8-.82 2.5.93 3.53 3.92 2.26 8.07-.82 2.69-1.95 5.13-3.08 6.68-.88 1.2-2.1.74-2.27-.74-.2-1.78-.78-3.15-1.71-3.15s-1.51 1.37-1.71 3.15c-.17 1.48-1.39 1.94-2.27.74-1.13-1.55-2.26-3.99-3.08-6.68C3.67 7.72 4.7 4.73 7.2 3.8Z" stroke="currentColor" stroke-width="1.7" />
+            </svg>
+          </span>
+          <span>Sorrir &amp; Vida <small>Odontologia integrada</small></span>
+        </a>
+
+        <div class="nav-links" id="menu">
+          <a href="#especialidades">Especialidades</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="button button-primary" href="#agendamento">Agendar</a>
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio">
+        <div class="container hero-grid">
+          <div class="reveal">
+            <span class="eyebrow">Clinica odontologica premium em Sao Paulo</span>
+            <h1>Odontologia precisa, acolhedora e feita para devolver seguranca ao seu sorriso.</h1>
+            <p class="hero-copy">
+              A Sorrir &amp; Vida combina diagnostico digital, especialistas integrados e uma jornada sem friccao para
+              tratamentos esteticos, preventivos, ortodonticos e reabilitadores.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#agendamento">Agendar avaliacao</a>
+              <a class="button button-secondary" href="tel:+551140022026">Ligar para a clinica</a>
+            </div>
+            <div class="trust-row" aria-label="Indicadores da clinica">
+              <div class="trust-item">
+                <strong>12k+</strong>
+                <span>pacientes atendidos</span>
+              </div>
+              <div class="trust-item">
+                <strong>4.9/5</strong>
+                <span>avaliacao media</span>
+              </div>
+              <div class="trust-item">
+                <strong>24h</strong>
+                <span>retorno no WhatsApp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal" aria-label="Consultorio moderno da Sorrir e Vida Odontologia">
+            <div class="clinic-scene skeleton">
+              <svg viewBox="0 0 680 760" role="img" aria-labelledby="clinic-title clinic-desc">
+                <title id="clinic-title">Sala clinica odontologica moderna</title>
+                <desc id="clinic-desc">Ilustracao de cadeira odontologica, luz clinica e painel digital de planejamento.</desc>
+                <rect width="680" height="760" fill="#f7fbfa" />
+                <rect x="58" y="66" width="564" height="420" rx="8" fill="#ffffff" stroke="#dce8e5" />
+                <rect x="96" y="106" width="198" height="126" rx="8" fill="#eef7f5" />
+                <path d="M122 192c37-61 84-67 140-17" stroke="#0f766e" stroke-width="11" stroke-linecap="round" fill="none" />
+                <path d="M402 95h138a22 22 0 0 1 22 22v92a22 22 0 0 1-22 22H402a22 22 0 0 1-22-22v-92a22 22 0 0 1 22-22Z" fill="#10201f" />
+                <path d="M410 145h118M410 176h86" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity=".82" />
+                <circle cx="556" cy="308" r="48" fill="#fff4df" stroke="#c89242" stroke-width="3" />
+                <path d="M556 250v-86M556 356v90" stroke="#c89242" stroke-width="10" stroke-linecap="round" />
+                <path d="M175 524c72-54 191-67 308-30 42 14 57 64 28 96-56 62-205 70-340 30-43-13-53-67 4-96Z" fill="#0f766e" />
+                <path d="M197 525c66-38 173-45 278-12 22 7 30 32 15 49-48 53-181 58-298 25-25-7-32-38 5-62Z" fill="#2faaa0" />
+                <path d="M252 621h226" stroke="#10201f" stroke-width="16" stroke-linecap="round" opacity=".12" />
+                <path d="M286 662h158" stroke="#10201f" stroke-width="14" stroke-linecap="round" opacity=".18" />
+                <rect x="114" y="386" width="246" height="44" rx="8" fill="#ffffff" stroke="#dce8e5" />
+                <rect x="136" y="402" width="112" height="12" rx="6" fill="#0f766e" opacity=".25" />
+                <circle cx="498" cy="642" r="30" fill="#ffffff" stroke="#dce8e5" stroke-width="4" />
+                <circle cx="168" cy="668" r="22" fill="#ffffff" stroke="#dce8e5" stroke-width="4" />
+              </svg>
+            </div>
+            <aside class="status-panel">
+              <strong>Planejamento digital</strong>
+              <p>Exames integrados, previsibilidade estetica e plano de tratamento explicado antes de iniciar.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="especialidades">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Especialidades para cada fase do cuidado.</h2>
+            <p>Tratamentos coordenados por uma equipe multidisciplinar, com protocolos claros e foco em conforto clinico.</p>
+          </div>
+
+          <div class="grid services-grid">
+            <article class="card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12c3.3-5.3 10.7-5.3 14 0-3.3 5.3-10.7 5.3-14 0Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+              </div>
+              <h3>Diagnostico digital</h3>
+              <p>Escaneamento intraoral, fotografias clinicas e analise detalhada para decisoes mais precisas.</p>
+            </article>
+
+            <article class="card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 4h8l2 6-6 10-6-10 2-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Estetica dental</h3>
+              <p>Lentes, resinas e clareamento com proporcao, naturalidade e preservacao da estrutura dental.</p>
+            </article>
+
+            <article class="card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v10H5V10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Implantes</h3>
+              <p>Reabilitacao oral planejada com cirurgia guiada, seguranca e acompanhamento pos-operatorio.</p>
+            </article>
+
+            <article class="card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 8h14M5 16h14M8 5v14M16 5v14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Ortodontia</h3>
+              <p>Alinhadores transparentes e aparelhos convencionais com acompanhamento continuo da evolucao.</p>
+            </article>
+
+            <article class="card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 10c2.4 0 4.2-1.1 5.2-3M19 10c-2.4 0-4.2-1.1-5.2-3M6 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Periodontia</h3>
+              <p>Prevencao e tratamento gengival para sustentar saude bucal e longevidade dos tratamentos.</p>
+            </article>
+
+            <article class="card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/><path d="M9 10.5l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Odontopediatria</h3>
+              <p>Atendimento cuidadoso para criancas, com comunicacao leve e foco em prevencao desde cedo.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="experiencia">
+        <div class="container process">
+          <div class="reveal">
+            <span class="eyebrow">Jornada do paciente</span>
+            <h2>Um processo claro do primeiro contato ao acompanhamento.</h2>
+          </div>
+
+          <div class="experience-panel reveal">
+            <div class="process-list">
+              <article class="process-item">
+                <span class="process-number">1</span>
+                <div>
+                  <h3>Avaliacao inicial</h3>
+                  <p>Entendimento das suas necessidades, historico de saude e expectativas esteticas.</p>
+                </div>
+              </article>
+              <article class="process-item">
+                <span class="process-number">2</span>
+                <div>
+                  <h3>Diagnostico e plano</h3>
+                  <p>Exames digitais, fotos clinicas e plano com prioridades, prazos e investimento.</p>
+                </div>
+              </article>
+              <article class="process-item">
+                <span class="process-number">3</span>
+                <div>
+                  <h3>Tratamento monitorado</h3>
+                  <p>Agenda organizada, acompanhamento proximo e protocolos de conforto durante o processo.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="metrics" aria-label="Diferenciais operacionais">
+              <div class="metric"><span>Retorno medio</span><strong>em ate 24h</strong></div>
+              <div class="metric"><span>Salas privativas</span><strong>6 consultorios</strong></div>
+              <div class="metric"><span>Controle biologico</span><strong>protocolo diario</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="equipe">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Especialistas que planejam juntos.</h2>
+            <p>Equipe integrada para reduzir retrabalho, aumentar previsibilidade e manter uma experiencia consistente.</p>
+          </div>
+
+          <div class="grid team-grid">
+            <article class="card team-card reveal">
+              <div class="portrait" aria-label="Retrato ilustrado da Dra. Helena Duarte">
+                <svg width="210" height="220" viewBox="0 0 210 220" role="img" aria-label="Dra. Helena Duarte, implantodontista">
+                  <circle cx="105" cy="72" r="44" fill="#f0c7a7" />
+                  <path d="M54 220c8-58 94-84 102 0H54Z" fill="#0f766e" />
+                  <path d="M59 77c7-42 78-63 99 1-28-8-60-10-99-1Z" fill="#10201f" />
+                </svg>
+              </div>
+              <div class="team-content">
+                <span>Implantodontia</span>
+                <h3>Dra. Helena Duarte</h3>
+                <p>Planejamento reabilitador, implantes guiados e casos complexos de recuperacao funcional.</p>
+              </div>
+            </article>
+
+            <article class="card team-card reveal">
+              <div class="portrait" aria-label="Retrato ilustrado do Dr. Rafael Nogueira">
+                <svg width="210" height="220" viewBox="0 0 210 220" role="img" aria-label="Dr. Rafael Nogueira, ortodontista">
+                  <circle cx="105" cy="74" r="42" fill="#d9aa88" />
+                  <path d="M50 220c10-60 98-82 110 0H50Z" fill="#c89242" />
+                  <path d="M68 51c21-28 77-22 82 34-34-17-61-16-82-34Z" fill="#273936" />
+                </svg>
+              </div>
+              <div class="team-content">
+                <span>Ortodontia</span>
+                <h3>Dr. Rafael Nogueira</h3>
+                <p>Alinhadores, aparelhos esteticos e acompanhamento de mordida para adultos e adolescentes.</p>
+              </div>
+            </article>
+
+            <article class="card team-card reveal">
+              <div class="portrait" aria-label="Retrato ilustrado da Dra. Marina Costa">
+                <svg width="210" height="220" viewBox="0 0 210 220" role="img" aria-label="Dra. Marina Costa, estetica dental">
+                  <circle cx="105" cy="72" r="43" fill="#efc29f" />
+                  <path d="M53 220c9-58 94-84 106 0H53Z" fill="#10201f" />
+                  <path d="M58 88c-4-50 92-76 101 4-30-20-65-22-101-4Z" fill="#7b4a2a" />
+                </svg>
+              </div>
+              <div class="team-content">
+                <span>Estetica dental</span>
+                <h3>Dra. Marina Costa</h3>
+                <p>Harmonizacao do sorriso com lentes, resinas, clareamento e preservacao dental.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="depoimentos">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Pacientes que voltaram a sorrir com tranquilidade.</h2>
+            <p>Relatos reais em formato resumido para proteger a privacidade dos pacientes.</p>
+          </div>
+
+          <div class="grid testimonials-grid">
+            <blockquote class="card reveal">
+              <p class="quote">"O plano foi explicado com clareza e o resultado ficou natural. Me senti segura desde a primeira consulta."</p>
+              <footer class="client"><span class="avatar">AM</span><strong>Ana M.</strong></footer>
+            </blockquote>
+            <blockquote class="card reveal">
+              <p class="quote">"Fiz implante e acompanhamento. A equipe foi cuidadosa, pontual e muito transparente em cada etapa."</p>
+              <footer class="client"><span class="avatar">LC</span><strong>Lucas C.</strong></footer>
+            </blockquote>
+            <blockquote class="card reveal">
+              <p class="quote">"A clinica tem estrutura excelente. A experiencia com alinhadores foi organizada e sem surpresas."</p>
+              <footer class="client"><span class="avatar">RS</span><strong>Renata S.</strong></footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="agendamento">
+        <div class="container appointment">
+          <div class="reveal">
+            <span class="eyebrow">Agendamento</span>
+            <h2>Comece com uma avaliacao completa.</h2>
+            <p class="hero-copy">
+              Envie seus dados e nossa equipe retorna para confirmar horario, especialidade e orientacoes da primeira visita.
+            </p>
+            <div class="contact-list">
+              <a href="tel:+551140022026">Telefone: (11) 4002-2026</a>
+              <a href="mailto:contato@sorrirevida.com.br">contato@sorrirevida.com.br</a>
+              <div>Av. Saude Integral, 1280 - Sao Paulo, SP</div>
+            </div>
+          </div>
+
+          <form class="form reveal" id="appointment-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Nome completo</label>
+                <input id="name" name="name" type="text" autocomplete="name" required minlength="3" />
+                <span class="field-error" data-error-for="name"></span>
+              </div>
+              <div class="field">
+                <label for="phone">WhatsApp</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(11) 99999-9999" />
+                <span class="field-error" data-error-for="phone"></span>
+              </div>
+              <div class="field">
+                <label for="service">Interesse principal</label>
+                <select id="service" name="service" required>
+                  <option value="">Selecione</option>
+                  <option>Diagnostico digital</option>
+                  <option>Estetica dental</option>
+                  <option>Implantes</option>
+                  <option>Ortodontia</option>
+                  <option>Prevencao</option>
+                </select>
+                <span class="field-error" data-error-for="service"></span>
+              </div>
+              <div class="field">
+                <label for="period">Melhor periodo</label>
+                <select id="period" name="period" required>
+                  <option value="">Selecione</option>
+                  <option>Manha</option>
+                  <option>Tarde</option>
+                  <option>Sabado</option>
+                </select>
+                <span class="field-error" data-error-for="period"></span>
+              </div>
+              <div class="field field-full">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" maxlength="420" placeholder="Conte brevemente o que voce procura."></textarea>
+                <span class="field-error" data-error-for="message"></span>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <p class="privacy">Seus dados serao usados apenas para contato de agendamento. Nao compartilhamos informacoes com terceiros.</p>
+              <button class="button button-primary" type="submit" id="submit-button">Enviar pedido</button>
+            </div>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="faq">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2>Duvidas frequentes.</h2>
+            <p>Informacoes rapidas para preparar sua primeira visita com mais seguranca.</p>
+          </div>
+
+          <div class="grid faq-grid">
+            <details class="reveal">
+              <summary>A primeira avaliacao inclui exames?</summary>
+              <p>A avaliacao inclui anamnese, exame clinico e indicacao dos exames digitais necessarios para o seu caso.</p>
+            </details>
+            <details class="reveal">
+              <summary>Atendem urgencias?</summary>
+              <p>Sim. A equipe prioriza casos de dor, trauma e infeccao conforme disponibilidade da agenda.</p>
+            </details>
+            <details class="reveal">
+              <summary>Trabalham com alinhadores?</summary>
+              <p>Sim. O tratamento com alinhadores e indicado apos avaliacao ortodontica e planejamento digital.</p>
+            </details>
+            <details class="reveal">
+              <summary>Ha opcoes de pagamento?</summary>
+              <p>Os planos sao apresentados de forma individual, com alternativas conforme o tratamento proposto.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Sorrir &amp; Vida Odontologia</strong>
+          <div>Atendimento de segunda a sexta, 8h as 19h, e sabados ate 13h.</div>
+        </div>
+        <div class="footer-links">
+          <a href="#especialidades">Especialidades</a>
+          <a href="#agendamento">Agendar</a>
+          <a href="mailto:contato@sorrirevida.com.br">Contato</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const loader = document.querySelector(".loader");
+      const menu = document.querySelector("#menu");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const form = document.querySelector("#appointment-form");
+      const submitButton = document.querySelector("#submit-button");
+      const statusBox = document.querySelector(".form-status");
+
+      const sanitize = (value) =>
+        value
+          .replace(/[<>]/g, "")
+          .replace(/\s+/g, " ")
+          .trim();
+
+      window.addEventListener("load", () => {
+        document.body.classList.remove("is-loading");
+        loader.setAttribute("aria-hidden", "true");
+      });
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.remove("is-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        statusBox.textContent = "";
+
+        const data = new FormData(form);
+        const values = Object.fromEntries([...data.entries()].map(([key, value]) => [key, sanitize(String(value))]));
+        const errors = {};
+
+        if (values.name.length < 3) errors.name = "Informe seu nome completo.";
+        if (!/^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/.test(values.phone)) errors.phone = "Informe um WhatsApp valido.";
+        if (!values.service) errors.service = "Selecione uma especialidade.";
+        if (!values.period) errors.period = "Escolha o melhor periodo.";
+        if (values.message.length > 420) errors.message = "A mensagem deve ter ate 420 caracteres.";
+
+        form.querySelectorAll(".field-error").forEach((error) => {
+          error.textContent = errors[error.dataset.errorFor] || "";
+        });
+
+        if (Object.keys(errors).length > 0) return;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Enviando...";
+
+        window.setTimeout(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = "Enviar pedido";
+          statusBox.textContent = "Pedido registrado. Nossa equipe entrara em contato para confirmar o melhor horario.";
+          form.reset();
+        }, 850);
+      });
+    </script>
+  </body>
+</html>
