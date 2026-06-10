@@ -638,6 +638,76 @@
         color: var(--muted);
       }
 
+      .service-card {
+        display: grid;
+        overflow: hidden;
+        gap: 18px;
+        padding: 0;
+      }
+
+      .service-media {
+        display: grid;
+        overflow: hidden;
+        margin: 0;
+        min-height: 178px;
+        place-items: center;
+        border-bottom: 1px solid rgba(220, 232, 229, 0.78);
+        background:
+          linear-gradient(180deg, rgba(238, 247, 245, 0.62), rgba(255, 255, 255, 0.96)),
+          var(--soft);
+        aspect-ratio: 16 / 10;
+      }
+
+      .service-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        opacity: 0;
+        padding: 14px;
+        transition: opacity 0.28s ease;
+      }
+
+      .service-card.has-image .service-image {
+        opacity: 1;
+      }
+
+      .service-body {
+        display: grid;
+        gap: 10px;
+        padding: 0 22px 22px;
+      }
+
+      .service-body h3 {
+        margin-top: 0;
+      }
+
+      .service-body p {
+        margin: 0;
+      }
+
+      .service-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        margin-top: 2px;
+        color: var(--brand-dark);
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      .service-link::after {
+        content: "→";
+        transform: translateX(0);
+        transition: transform 0.18s ease;
+      }
+
+      .service-link:hover::after,
+      .service-link:focus-visible::after {
+        transform: translateX(3px);
+      }
+
       .process {
         display: grid;
         align-items: start;
@@ -1437,52 +1507,70 @@
           </div>
 
           <div class="grid services-grid">
-            <article class="card reveal">
-              <div class="icon-box" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12c3.3-5.3 10.7-5.3 14 0-3.3 5.3-10.7 5.3-14 0Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+            <article class="card service-card reveal" data-service-card>
+              <figure class="service-media">
+                <img class="service-image" alt="" width="640" height="400" loading="lazy" decoding="async" data-service-image />
+              </figure>
+              <div class="service-body">
+                <h3>Diagnóstico digital</h3>
+                <p>Escaneamento intraoral, fotografias clínicas e análise detalhada para decisões mais precisas.</p>
+                <a class="service-link" href="#agendamento">Agendar avaliação</a>
               </div>
-              <h3>Diagnóstico digital</h3>
-              <p>Escaneamento intraoral, fotografias clínicas e análise detalhada para decisões mais precisas.</p>
             </article>
 
-            <article class="card reveal">
-              <div class="icon-box" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 4h8l2 6-6 10-6-10 2-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <article class="card service-card reveal" data-service-card>
+              <figure class="service-media">
+                <img class="service-image" alt="" width="640" height="400" loading="lazy" decoding="async" data-service-image />
+              </figure>
+              <div class="service-body">
+                <h3>Estética dental</h3>
+                <p>Lentes, resinas e clareamento com proporção, naturalidade e preservação da estrutura dental.</p>
+                <a class="service-link" href="#agendamento">Agendar avaliação</a>
               </div>
-              <h3>Estética dental</h3>
-              <p>Lentes, resinas e clareamento com proporção, naturalidade e preservação da estrutura dental.</p>
             </article>
 
-            <article class="card reveal">
-              <div class="icon-box" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v10H5V10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <article class="card service-card reveal" data-service-card>
+              <figure class="service-media">
+                <img class="service-image" alt="" width="640" height="400" loading="lazy" decoding="async" data-service-image />
+              </figure>
+              <div class="service-body">
+                <h3>Implantes</h3>
+                <p>Reabilitação oral planejada com cirurgia guiada, segurança e acompanhamento pós-operatório.</p>
+                <a class="service-link" href="#agendamento">Agendar avaliação</a>
               </div>
-              <h3>Implantes</h3>
-              <p>Reabilitação oral planejada com cirurgia guiada, segurança e acompanhamento pós-operatório.</p>
             </article>
 
-            <article class="card reveal">
-              <div class="icon-box" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 8h14M5 16h14M8 5v14M16 5v14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <article class="card service-card reveal" data-service-card>
+              <figure class="service-media">
+                <img class="service-image" alt="" width="640" height="400" loading="lazy" decoding="async" data-service-image />
+              </figure>
+              <div class="service-body">
+                <h3>Ortodontia</h3>
+                <p>Alinhadores transparentes e aparelhos convencionais com acompanhamento contínuo da evolução.</p>
+                <a class="service-link" href="#agendamento">Agendar avaliação</a>
               </div>
-              <h3>Ortodontia</h3>
-              <p>Alinhadores transparentes e aparelhos convencionais com acompanhamento contínuo da evolução.</p>
             </article>
 
-            <article class="card reveal">
-              <div class="icon-box" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 10c2.4 0 4.2-1.1 5.2-3M19 10c-2.4 0-4.2-1.1-5.2-3M6 17h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <article class="card service-card reveal" data-service-card>
+              <figure class="service-media">
+                <img class="service-image" alt="" width="640" height="400" loading="lazy" decoding="async" data-service-image />
+              </figure>
+              <div class="service-body">
+                <h3>Periodontia</h3>
+                <p>Prevenção e tratamento gengival para sustentar a saúde bucal e a longevidade dos tratamentos.</p>
+                <a class="service-link" href="#agendamento">Agendar avaliação</a>
               </div>
-              <h3>Periodontia</h3>
-              <p>Prevenção e tratamento gengival para sustentar a saúde bucal e a longevidade dos tratamentos.</p>
             </article>
 
-            <article class="card reveal">
-              <div class="icon-box" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/><path d="M9 10.5l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <article class="card service-card reveal" data-service-card>
+              <figure class="service-media">
+                <img class="service-image" alt="" width="640" height="400" loading="lazy" decoding="async" data-service-image />
+              </figure>
+              <div class="service-body">
+                <h3>Odontopediatria</h3>
+                <p>Atendimento cuidadoso para crianças, com comunicação leve e foco em prevenção desde cedo.</p>
+                <a class="service-link" href="#agendamento">Agendar avaliação</a>
               </div>
-              <h3>Odontopediatria</h3>
-              <p>Atendimento cuidadoso para crianças, com comunicação leve e foco em prevenção desde cedo.</p>
             </article>
           </div>
         </div>
@@ -1816,6 +1904,55 @@
           .replace(/[<>]/g, "")
           .replace(/\s+/g, " ")
           .trim();
+
+      const serviceImageFiles = [
+        "banner Atendimento odontologico.png",
+        "Estética dental.png",
+        "Implantes.png",
+        "Ortodontia.png",
+        "Periodontia.png",
+        "Odontopediatria.png",
+      ];
+
+      const serviceImageAliases = {
+        "diagnostico digital": ["atendimento odontologico"],
+      };
+
+      const normalizeAssetName = (value) =>
+        value
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .replace(/\.(png|jpe?g|webp|avif)$/i, "")
+          .replace(/[^a-z0-9]+/g, " ")
+          .trim();
+
+      const findServiceImage = (serviceName) => {
+        const serviceKey = normalizeAssetName(serviceName);
+        const candidates = [serviceKey, ...(serviceImageAliases[serviceKey] || [])];
+
+        return serviceImageFiles.find((fileName) => {
+          const fileKey = normalizeAssetName(fileName);
+          return candidates.some((candidate) => fileKey === candidate || fileKey.includes(candidate));
+        });
+      };
+
+      document.querySelectorAll("[data-service-card]").forEach((card) => {
+        const title = card.querySelector("h3")?.textContent?.trim();
+        const image = card.querySelector("[data-service-image]");
+        const imageFile = title ? findServiceImage(title) : null;
+
+        if (!image || !imageFile) return;
+
+        image.addEventListener("load", () => card.classList.add("has-image"), { once: true });
+        image.addEventListener("error", () => {
+          card.classList.remove("has-image");
+          image.removeAttribute("src");
+        });
+
+        image.alt = `Imagem do serviço ${title}`;
+        image.src = encodeURI(imageFile);
+      });
 
       window.addEventListener("load", () => {
         document.body.classList.remove("is-loading");
