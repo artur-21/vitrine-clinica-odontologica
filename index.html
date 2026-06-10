@@ -1906,17 +1906,13 @@
           .trim();
 
       const serviceImageFiles = [
-        "banner Atendimento odontologico.png",
+        "Diagnóstico digital.png",
         "Estética dental.png",
         "Implantes.png",
         "Ortodontia.png",
         "Periodontia.png",
         "Odontopediatria.png",
       ];
-
-      const serviceImageAliases = {
-        "diagnostico digital": ["atendimento odontologico"],
-      };
 
       const normalizeAssetName = (value) =>
         value
@@ -1929,11 +1925,10 @@
 
       const findServiceImage = (serviceName) => {
         const serviceKey = normalizeAssetName(serviceName);
-        const candidates = [serviceKey, ...(serviceImageAliases[serviceKey] || [])];
 
         return serviceImageFiles.find((fileName) => {
           const fileKey = normalizeAssetName(fileName);
-          return candidates.some((candidate) => fileKey === candidate || fileKey.includes(candidate));
+          return fileKey === serviceKey || fileKey.includes(serviceKey);
         });
       };
 
