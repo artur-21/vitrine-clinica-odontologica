@@ -334,7 +334,8 @@
 
       .carousel-frame {
         position: relative;
-        aspect-ratio: 25 / 10;
+        aspect-ratio: 2 / 1;
+        min-height: clamp(280px, 30vw, 420px);
         overflow: hidden;
       }
 
@@ -349,7 +350,7 @@
         position: relative;
         flex: 0 0 100%;
         margin: 0;
-        padding: 16px;
+        padding: 10px;
         display: grid;
         place-items: center;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.9));
@@ -1131,7 +1132,8 @@
         }
 
         .carousel-frame {
-          aspect-ratio: 16 / 8.5;
+          aspect-ratio: 16 / 9;
+          min-height: clamp(220px, 48vw, 320px);
         }
 
         .panel-grid {
@@ -1207,7 +1209,7 @@
         }
 
         .carousel-slide {
-          padding: 12px;
+          padding: 8px;
         }
 
         .carousel-control {
