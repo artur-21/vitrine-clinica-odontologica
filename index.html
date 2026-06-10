@@ -11,6 +11,11 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0f766e" />
     <link rel="canonical" href="https://vitrine-clinica-odontologica.vercel.app/" />
+    <link rel="icon" href="logo%20icone.png" type="image/png" />
+    <link rel="apple-touch-icon" href="logo%20icone.png" />
+    <meta property="og:image" content="https://vitrine-clinica-odontologica.vercel.app/Logo%20completa.png" />
+    <meta property="og:image:alt" content="Logo da Sorrir &amp; Vida Odontologia" />
+    <meta name="twitter:image" content="https://vitrine-clinica-odontologica.vercel.app/Logo%20completa.png" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Sorrir &amp; Vida Odontologia" />
@@ -188,19 +193,17 @@
         display: inline-flex;
         align-items: center;
         gap: 12px;
+        text-decoration: none;
         font-weight: 800;
         letter-spacing: 0;
       }
 
-      .brand-icon {
-        display: grid;
-        width: 42px;
-        height: 42px;
-        place-items: center;
-        border-radius: 8px;
-        background: var(--brand);
-        color: #fff;
-        box-shadow: 0 14px 30px rgba(15, 118, 110, 0.25);
+      .brand-logo {
+        display: block;
+        width: clamp(132px, 16vw, 178px);
+        height: auto;
+        max-height: 52px;
+        object-fit: contain;
       }
 
       .brand small {
@@ -912,27 +915,16 @@
       }
 
       .footer-brand {
-        display: inline-flex;
-        align-items: center;
+        display: grid;
         gap: 14px;
         color: #f4fbfa;
       }
 
-      .footer-mark {
-        display: grid;
-        width: 56px;
-        height: 56px;
-        flex: 0 0 56px;
-        place-items: center;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.96);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
-        overflow: hidden;
-      }
-
-      .footer-mark img {
-        width: 42px;
-        height: 42px;
+      .footer-brand-logo {
+        display: block;
+        width: clamp(170px, 22vw, 250px);
+        height: auto;
+        max-height: 82px;
         object-fit: contain;
       }
 
@@ -1178,6 +1170,16 @@
           display: none;
         }
 
+        .brand-logo {
+          width: min(150px, 42vw);
+          max-height: 42px;
+        }
+
+        .footer-brand-logo {
+          width: min(220px, 70vw);
+          max-height: 72px;
+        }
+
         .hero-actions,
         .form-footer {
           align-items: stretch;
@@ -1278,12 +1280,15 @@
     <header class="site-header">
       <nav class="nav container" aria-label="Navegacao principal">
         <a class="brand" href="#inicio" aria-label="Sorrir e Vida Odontologia">
-          <span class="brand-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M7.2 3.8c1.35-.5 2.96-.08 4.8.82 1.84-.9 3.45-1.32 4.8-.82 2.5.93 3.53 3.92 2.26 8.07-.82 2.69-1.95 5.13-3.08 6.68-.88 1.2-2.1.74-2.27-.74-.2-1.78-.78-3.15-1.71-3.15s-1.51 1.37-1.71 3.15c-.17 1.48-1.39 1.94-2.27.74-1.13-1.55-2.26-3.99-3.08-6.68C3.67 7.72 4.7 4.73 7.2 3.8Z" stroke="currentColor" stroke-width="1.7" />
-            </svg>
-          </span>
-          <span>Sorrir &amp; Vida <small>Odontologia integrada</small></span>
+          <img
+            class="brand-logo"
+            src="Logo%20completa.png"
+            alt="Sorrir &amp; Vida Odontologia"
+            width="3000"
+            height="1254"
+            fetchpriority="high"
+            decoding="async"
+          />
         </a>
 
         <div class="nav-links" id="menu">
@@ -1690,13 +1695,15 @@
       <div class="container footer-top">
         <div class="footer-block footer-brand-block">
           <a class="footer-brand" href="#inicio" aria-label="Sorrir e Vida Odontologia">
-            <span class="footer-mark" aria-hidden="true">
-              <img src="logo%20icone.png" alt="" width="42" height="42" decoding="async" />
-            </span>
-            <span class="footer-brand-text">
-              <strong>Sorrir &amp; Vida Odontologia</strong>
-              <span>Odontologia premium, acolhedora e previsivel.</span>
-            </span>
+            <img
+              class="footer-brand-logo"
+              src="Logo%20completa.png"
+              alt="Sorrir &amp; Vida Odontologia"
+              width="3000"
+              height="1254"
+              loading="lazy"
+              decoding="async"
+            />
           </a>
           <p class="footer-copy">
             Cuidado integrado, planejamento claro e atendimento humano para transformar sua experiência em cada etapa.
